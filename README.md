@@ -1,2 +1,2 @@
-# tsql_tasks
-Tasks in tsql
+# Tsql tasks
+In this repo is the sql tasks solved
