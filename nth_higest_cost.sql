@@ -1,9 +1,12 @@
 -- 1.1)
 
 DECLARE @n INT;
-SET @n = 2;
+SET @n =1;
 
-SELECT *
-FROM Shipments
-ORDER BY Shipments.Cost
-LIMIT 1 OFFSET @n	
+SELECT db_sorted.[Shipment Id], db_sorted.Cost 
+FROM (
+  SELECT
+    ROW_NUMBER() OVER (ORDER BY db.Cost DESC) AS row_n, *
+  FROM kinver.dbo.cost_data as db
+) as db_sorted
+WHERE row_n = @n
