@@ -1,9 +1,9 @@
 -- 1.1)
 
 DECLARE @n INT;
-SET @n =1;
+SET @n = 1;
 
-SELECT db_sorted.[Shipment Id], db_sorted.Cost 
+SELECT db_sorted.Cost as HigestCost, @n as nth
 FROM (
   SELECT
     ROW_NUMBER() OVER (ORDER BY db.Cost DESC) AS row_n, *
