@@ -3,7 +3,7 @@
 DECLARE @n INT;
 SET @n = 1;
 
-SELECT db_sorted.Cost as HigestCost, @n as nth
+SELECT db_sorted.Cost as HighestCost, @n as nth
 FROM (
   SELECT
     ROW_NUMBER() OVER (ORDER BY db.Cost DESC) AS row_n, *

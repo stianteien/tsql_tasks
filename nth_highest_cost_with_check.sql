@@ -7,7 +7,7 @@ SELECT @n as 'row_nr',
  CASE WHEN COUNT(*) > 0
        THEN SUM(db_sorted.Cost)  
        ELSE Null
- END as HigestCost
+ END as HighestCost
 
 FROM (
 	SELECT
